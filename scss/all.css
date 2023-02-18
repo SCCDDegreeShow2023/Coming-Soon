@@ -129,7 +129,7 @@ table {
   display: none;
 }
 
-@media (max-width: 370px) {
+@media (max-width: 450px) {
   .desktop {
     display: none;
   }
