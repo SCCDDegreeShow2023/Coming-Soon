@@ -56,28 +56,48 @@ table {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-ThinItalic-webfont.eot");
+}
 .wrap {
-  margin: 2;
+  margin: 0 auto;
   padding: 0;
-  width: 100%;
-  height: 100vh;
   box-sizing: border-box;
   position: relative;
   align-items: center;
   justify-self: center;
 }
 
-.menu {
-  position: absolute;
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.container .bg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.container .bg .img {
+  height: 100%;
+}
+.container .menu-container {
+  position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100vm;
+  padding-left: 1vw;
+}
+.container .menu-container .menu {
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
+  justify-content: flex-start;
+}
+.container .menu-container .mobile-menu {
+  display: none;
 }
 
 .menu li {
@@ -87,10 +107,9 @@ table {
   color: black;
   text-align: center;
   padding: 38.5px;
+  padding: 2vw;
 }
-
 .menu li a {
-  display: block;
   text-decoration: none;
   color: black;
 }
@@ -100,26 +119,51 @@ table {
   color: transparent;
 }
 
-@font-face {
-  font-family: "Roboto";
-  src: url("Roboto-ThinItalic-webfont.eot");
-}
-.back-video {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
+.desktop {
+  width: 100%;
+  height: 100vh;
+  display: block;
 }
 
-@media (min-aspect-ratio: 16/9) {
-  .back-video {
-    width: 100%;
-    height: auto;
-  }
+.mobile {
+  display: none;
 }
-@media (max-aspect-ratio: 16/9) {
-  .back-video {
-    width: auto;
-    height: 100%;
+
+@media (max-width: 370px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    width: 100%;
+    height: 100vh;
+    display: block;
+  }
+  .container .menu-container {
+    width: 100%;
+  }
+  .container .menu-container .menu {
+    display: none;
+  }
+  .container .menu-container .mobile-menu {
+    display: block;
+    padding-bottom: 1vh;
+  }
+  .container .menu-container .mobile-menu .followUs {
+    display: flex;
+    justify-content: space-between;
+  }
+  .container .menu-container .mobile-menu .followUs li {
+    font-family: "Roboto";
+    font-style: italic;
+    color: black;
+    text-align: center;
+    padding: 38.5px;
+    padding: 1vw;
+    font-size: 42px;
+    font-size: 4vh;
+  }
+  .container .menu-container .mobile-menu .followUs li a {
+    text-decoration: none;
+    color: black;
   }
 }/*# sourceMappingURL=all.css.map */
